@@ -24,10 +24,13 @@ const connectDb = async () => {
 connectDb();
 //rest object
 const app = express();
+app.set("trust proxy", 1);
 //middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({ origin: ["https://expense-tracker-frontend-sigma.vercel.app/"] })
+);
 
 //routes
 //user routes
