@@ -28,9 +28,7 @@ app.set("trust proxy", 1);
 //middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(
-  cors({ origin: ["https://expense-tracker-frontend-sigma.vercel.app/"] })
-);
+app.use(cors());
 
 //routes
 //user routes
